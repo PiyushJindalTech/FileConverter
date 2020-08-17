@@ -1,0 +1,386 @@
+﻿@model PDFConvert.Models.ConvertPDF
+
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bloger</title>
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your,Keywords">
+    <meta name="author" content="ResponsiveWebInc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="@Url.Content("~/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/css/style.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/css/sweetalert.min.css")" rel="stylesheet" />
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    @using (Html.BeginForm("ConvertFile", "ConvertPDF", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+        <div class="wrapper">
+            <!-- header -->
+            <header>
+                <!-- navigation -->
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            @*<a class="navbar-brand" href="#"><img class="img-responsive" src="img/logo_maindata.png" alt="Logo" /></a>*@
+                            <a class="navbar-brand" href="#"><img src="/img/logo_maindata.png">EOnlineTools</a>
+                            <button class="collapsible navbar-toggle" type="button">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="content">
+                                <ul class="nav navbar-nav navbar-left">
+                                    <li>
+                                        <a>Convert & Compress</a>
+                                        <ul>
+                                            <li class="img-pdf-compress"><a href="/ConvertPDF/Index/CompressPDF">Compress PDF</a></li>
+                                            <li class="img-pdf-converter"><a href="/ConvertPDF/Index/PDFConverter">PDF Converter</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>Split & Merge</a>
+                                        <ul>
+                                            <li class="img-pdf-split"><a href="/ConvertPDF/Index/SplitPDF">Split PDF</a></li>
+                                            <li class="img-pdf-merge"><a href="/ConvertPDF/Index/MergePDF">Merge PDF</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>View & Edit</a>
+                                        <ul>
+                                            @*<li><a href="#">Edit PDF</a></li>
+                                                <li><a href="#">PDF Reader</a></li>
+                                                <li><a href="#">Share Document</a></li>
+                                                <li><a href="#">Number Pages</a></li>*@
+                                            <li class="img-pdf-delete-pages"><a href="/ConvertPDF/Index/DeletePDFPages">Delete PDF Pages</a></li>
+                                            <li class="img-rotate-pdf"><a href="/ConvertPDF/Index/RotatePDF">Rotate PDF</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>Convert from PDF</a>
+                                        <ul>
+                                            <li class="img-pdf-to-word"><a href="/ConvertPDF/Index/PDFtoWord">PDF to Word</a></li>
+                                            <li class="img-pdf-to-excel"><a href="/ConvertPDF/Index/PDFtoExcel">PDF to Excel</a></li>
+                                            <li class="img-pdf-to-ppt"><a href="/ConvertPDF/Index/PDFtoPPT">PDF to PPT</a></li>
+                                            <li class="img-pdf-to-jpg"><a href="/ConvertPDF/Index/PDFtoJPG">PDF to JPG</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>Convert to PDF</a>
+                                        <ul>
+                                            <li class="img-word-to-pdf"><a href="/ConvertPDF/Index/WordtoPDF">Word to PDF</a></li>
+                                            <li class="img-Excel-to-pdf"><a href="/ConvertPDF/Index/ExceltoPDF">Excel to PDF</a></li>
+                                            <li class="img-ppt-to-pdf"><a href="/ConvertPDF/Index/PPTtoPDF">PPT to PDF</a></li>
+                                            <li class="img-jpeg-to-pdf"><a href="/ConvertPDF/Index/JPGtoPDF">JPG to PDF</a></li>
+                                        </ul>
+                                    </li>
+                                    @*<li>
+                                            <a>Sign & Security</a>
+                                            <ul>
+                                                <li><a href="#">eSign PDF</a></li>
+                                                <li><a href="#">Unlock PDF</a></li>
+                                                <li class="img-protect-pdf"><a href="#">Protect PDF</a></li>
+                                            </ul>
+                                        </li>*@
+                                </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </header>
+
+            <!-- banner -->
+            <div class="Before-banner">
+                <div class="container">
+                    <!-- heading -->
+                    <h2><strong>PDF Editor</strong></h2>
+                    <!-- paragraph -->
+                    <p>The best online tool to edit PDF documents</p>
+                    <br />
+                </div>
+            </div>
+            <div class="container upload-container">
+                <div class="upload-btn-wrapper header-icon">
+                    <div class="upload-icon">
+                        <img src="https://img.findmysoft.com/ico/133998.png" class="file-icon" alt="Alternate Text" />
+                        <div class="file-selector row">
+                            <img src="https://static.thenounproject.com/png/47347-200.png" alt="upload file" class="text-left" />
+                            <label class="text-center">Choose File </label>
+                            <span class="caret text-right"></span>
+                        </div>
+                        @*<div class="DIV-UploadInline"></div>*@
+                    </div>
+                    <input type="file" name="flpExcel" id="flpExcel" onchange="UploadFile()">
+
+                </div>
+            </div>
+            <input type="submit" id="btnUpload" value="Upload File" style="visibility:hidden" />
+            <!-- banner end -->
+            <!-- after banner -->
+            <div class="after-banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <!-- after banner item -->
+                            <div class="ab-item text-center">
+                                <img class="img-responsive Feature-Image" src="@Url.Content("~/img/blog/compress.svg")" alt="Logo" />
+                                <!-- heading -->
+                                <h4>Add text and fill forms</h4>
+                                <!-- paragraph -->
+                                <p>Our online PDF editor will allow you to quickly to add text and fill out PDF forms. Import files straight from your PC, Dropbox, or Google Drive to the toolbox above to get started.</p>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <!-- after banner item -->
+                            <div class="ab-item text-center">
+                                <img class="img-responsive Feature-Image" src="@Url.Content("~/img/blog/security.svg")" alt="Logo" />
+                                <!-- heading -->
+                                <h4>Easy-to-use PDF editor</h4>
+                                <!-- paragraph -->
+                                <p>The simplified interface was designed to make it easy for anyone to edit documents. Aside from adding text, you can modify your PDF further by adding various shapes and drawings.</p>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <!-- after banner item -->
+                            <div class="ab-item text-center">
+                                <img class="img-responsive Feature-Image" src="@Url.Content("~/img/blog/thumsupsvg.svg")" alt="Logo" />
+                                <!-- heading -->
+                                <h4>Functional across all devices</h4>
+                                <!-- paragraph -->
+                                <p>This online tool is compatible with Windows, Linux and Mac devices. As it is browser-based, you can edit PDF online with mobile devices. No installation or registration is necessary.</p>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <!-- after banner item -->
+                            <div class="ab-item text-center">
+                                <img class="img-responsive Feature-Image" src="@Url.Content("~/img/blog/lock.svg")" alt="Logo" />
+                                <!-- heading -->
+                                <h4>Secure PDF editing software</h4>
+                                <!-- paragraph -->
+                                <p>The safety of your data is 100% guaranteed thanks to an advanced level of security. Both of our website and file transfers have state-of-the-art SSL encryption in place.</p>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <!-- after banner item -->
+                            <div class="ab-item text-center">
+                                <img class="img-responsive Feature-Image" src="@Url.Content("~/img/blog/easy.svg")" alt="Logo" />
+                                <!-- heading -->
+                                <h4>Convert to Word to edit original content</h4>
+                                <!-- paragraph -->
+                                <p>Alternatively, you can use our <a href="/pdf-to-word">PDF to Word</a> tool to transform your PDF into an editable Word document. We will ensure that all the original formatting is in place.</p>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <!-- after banner item -->
+                            <div class="ab-item text-center">
+                                <img class="img-responsive Feature-Image" src="@Url.Content("~/img/blog/cloud.svg")" alt="Logo" />
+                                <!-- heading -->
+                                <h4>Access from anywhere</h4>
+                                <!-- paragraph -->
+                                <p>Smallpdf operates in the cloud on our secure servers. Therefore, you can use our PDF editor online from anywhere, via your favorite web browser: Chrome, IE, Firefox or Safari.</p>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="container">
+                    <!-- subscribe content -->
+                    <div>
+                        <div class="Feature-View"><img class="img-responsive" src="@Url.Content("~/img/logo.png")" alt="Logo" />></div>
+                        <div class="Feature-View">
+                            <ul>
+                                How to edit a PDF file online:
+                                <li>Drag and drop your PDF document into the PDF Editor.</li>
+                                <li>Add text, images, shapes or freehand annotations as you wish.</li>
+                                <li>You can also edit the size, font, and color of the added content.</li>
+                                <li>Click 'Apply' and save the changes and download your edited PDF.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--PDF Feature-->
+            <!--Conversion Type-->
+            <div style="display:none;">
+                <div class="container">
+                    <!-- subscribe content -->
+                    <div>
+                        <ul class="">
+                            <li>
+                                Convert & Compress
+                                <ul>
+                                    <li><a href="#">Compress PDF</a></li>
+                                    <li><a href="#">PDF Converter</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                Split & Merge
+                                <ul>
+                                    <li><a href="#">Split PDF</a></li>
+                                    <li><a href="#">Merge PDF</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                View & Edit
+                                <ul>
+                                    <li><a href="#">Edit PDF</a></li>
+                                    <li><a href="#">PDF Reader</a></li>
+                                    <li><a href="#">Share Document</a></li>
+                                    <li><a href="#">Number Pages</a></li>
+                                    <li><a href="#">Delete PDF Pages</a></li>
+                                    <li><a href="#">Rotate PDF</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                Convert from PDF
+                                <ul>
+                                    <li><a href="#">PDF to Word</a></li>
+                                    <li><a href="#">PDF to Excel</a></li>
+                                    <li><a href="#">PDF to PPT</a></li>
+                                    <li><a href="#">PDF to JPG</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                Convert to PDF
+                                <ul>
+                                    <li><a href="#">Word to PDF</a></li>
+                                    <li><a href="#">Excel to PDF</a></li>
+                                    <li><a href="#">PPT to PDF</a></li>
+                                    <li><a href="#">JPG to PDF</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                Sign & Security
+                                <ul>
+                                    <li><a href="#">eSign PDF</a></li>
+                                    <li><a href="#">Unlock PDF</a></li>
+                                    <li><a href="#">Protect PDF</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid p-2" style="margin-top:3%;color:white !important;background:#293745;">
+                <div class="row" style="padding-top:1%">
+                    <div class="col-md-3 d-flex justify-content-center align-items-center">
+                        <div style="padding:6px;font-size:15px;">
+                            <h3>Eonline Tools</h3>
+                            <span style="font-size:16px">Best Free Online Tools<br> used by millions</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 d-flex justify-content-center align-items-center" style="font-size:12px;">
+                        <div>
+                            <ul style="margin-bottom:0 !important" class="footerlinkcolor">
+                                <li><a href="/Bank/AllBankIFSCCode">Search IFSC Code</a></li>
+                                <li><a href="/OnlineTool/TextCompare">Text Compare</a></li>
+                                <li><a href="/OnlineTool/ListCompare">List Compare</a></li>
+                                <li><a href="/OnlineTool/EMICalculator">EMI Calculator</a></li>
+                                <li><a href="/CoronaTracker/CoronaTracker">Corona Tracker</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 d-flex justify-content-center align-items-center" style="font-size:12px;">
+                        <div>
+                            <ul style="margin-bottom:0 !important" class="footerlinkcolor">
+                                <li><a href="/OnlineTool/InternetSpeedTest">Test Internet Speed</a></li>
+                                <li><a href="/OnlineTool/AboutOurTools#SearchIfscCode">About IFSC Search Tool</a></li>
+                                <li><a href="/OnlineTool/AboutOurTools#TextCompare">About Text Compare</a></li>
+                                <li><a href="/OnlineTool/AboutOurTools#ListComparison">About List Compare</a></li>
+                                <li><a href="/OnlineTool/AboutOurTools#EMICalculator">About EMI Calculator</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 d-flex justify-content-center align-items-center" style="font-size:12px;">
+                        <ul style="margin-bottom:0 !important" class="footerlinkcolor">
+                            <li><a href="#">Mobile Tracker</a></li>
+                            <li><a href="/OnlineTool/AboutOurTools">About Text Compare</a></li>
+                            <li><a href="/OnlineTool/Terms">Tems &amp; Condition</a></li>
+                            <li><a href="/OnlineTool/Terms#PrivacyPolicy">PrivacyPolicy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 d-block d-flex justify-content-center" style="font-size:12px;">
+                        <div id="marketing">
+                            <i class="im im-instagram"></i>
+                            <i class="im im-facebook"></i>
+                            <i class="im im-twitter"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-center align-items-center" style="padding:5px;font-size:12px;text-align:center">
+                        Copyright@2020 eonlinetools.com.
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    }
+    <script src="@Url.Content("~/js/jquery.js")"></script>
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/js/respond.min.js")"></script>
+    <script src="@Url.Content("~/js/html5shiv.js")"></script>
+    <script src="@Url.Content("~/js/custom.js")"></script>
+    <script src="@Url.Content("~/js/sweetalert.min.js")"></script>
+    <script>
+        function UploadFile() {
+            debugger;
+            document.getElementById('btnUpload').click();
+            //btnUploadFile.addEventListener('click', true);
+        }
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+
+    </script>
+    <script>
+        function showPopup(title, message, messageType) {
+            swal(title, message, messageType);
+        }
+
+        function DisplayPopWithoutConfirmation(title, message, messageType) {
+            swal({
+                html: true,
+                title: title,
+                text: message,
+                type: messageType,
+                showConfirmButton: false
+            })
+        }
+    </script>
+</body>
+</html>

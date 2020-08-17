@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+    @section scripts
+     {
+         @RenderSection("scripts", false)
+     }
+</head>
+<body>
+    <div>
+        <div id="option_box">
+            @RenderSection("scripts", false)
+        </div>
+    </div>
+</body>
+</html>
