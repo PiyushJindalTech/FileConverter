@@ -135,7 +135,6 @@
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\custom.css" />
     <Content Include="css\flashy.min.css" />
     <Content Include="css\flaticon.css" />
     <Content Include="css\font-awesome.min.css" />
@@ -148,6 +147,8 @@
     <Content Include="css\timeline.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\133998.png" />
+    <Content Include="img\47347-200.png" />
     <Content Include="img\blog\1.jpg" />
     <Content Include="img\blog\2.jpg" />
     <Content Include="img\event\1.jpg" />
@@ -193,6 +194,7 @@
     <Content Include="fonts\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\PDFConverter.pubxml" />
     <None Include="Properties\PublishProfiles\Piyush_Jindal.pubxml" />
   </ItemGroup>
   <PropertyGroup>

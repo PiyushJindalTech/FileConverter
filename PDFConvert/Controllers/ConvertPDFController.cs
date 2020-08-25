@@ -38,6 +38,9 @@ namespace PDFConvert.Controllers
 
                 string filePath = Server.MapPath("~/ExportFiles/");
                 flpExcel.SaveAs(filePath + flpExcel.FileName);
+
+                Helper.ErrorLog("FilePath:  " + filePath);
+
                 string outputFileName = "";
                 string fileExtension = Path.GetExtension(flpExcel.FileName).ToLower().Replace(".", "");
                 string tStatus = "";

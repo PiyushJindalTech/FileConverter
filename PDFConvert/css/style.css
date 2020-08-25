@@ -661,75 +661,180 @@ footer {
 }
 
 ul {
-  padding-left: 2rem;
-  list-style-type: none;
+    padding-left: 2rem;
+    list-style-type: none;
 }
 
-ul > li > ul > li {
-    font-size: larger;
-    padding: 5px;
-    padding-left: 2rem;    
-    background-position: 0 6px;
+    ul > li > ul > li {
+        font-size: larger;
+        padding: 5px;
+        padding-left: 2rem;
+        background-position: 0 6px;
+        background-size: 1.6rem 1.6rem;
+        background-repeat: no-repeat;
+    }
 
-    background-size: 1.6rem 1.6rem;
-    background-repeat: no-repeat;
-}
-.img-pdf-compress{
-        background-image: url(../img/Icons/pdf-compress.svg);
-}
-.img-ebook-to-pdf{
-        background-image: url(../img/Icons/ebook-to-pdf.svg);
-}
-.img-Excel-to-pdf{
-        background-image: url(../img/Icons/Excel-to-pdf.svg);
-}
-.img-jpeg-to-pdf{
-        background-image: url(../img/Icons/jpeg-to-pdf.svg);
-}
-.img-odt-to-pdf{
-        background-image: url(../img/Icons/odt-to-pdf.svg);
-}
-.img-pages-to-pdf{
-        background-image: url(../img/Icons/pages-to-pdf.svg);
-}
-.img-pdf-converter{
-        background-image: url(../img/Icons/pdf-converter.svg);
-}
-.img-pdf-delete-pages{
-        background-image: url(../img/Icons/pdf-delete-pages.svg);
-}
-.img-pdf-merge{
-        background-image: url(../img/Icons/pdf-merge.svg);
-}
-.img-pdf-split{
-        background-image: url(../img/Icons/pdf-split.svg);
-}
-.img-pdf-to-excel{
-        background-image: url(../img/Icons/pdf-to-excel.svg);
-}
-.img-pdf-to-jpg{
-        background-image: url(../img/Icons/pdf-to-jpg.svg);
-}
-.img-pdf-to-png{
-        background-image: url(../img/Icons/pdf-to-png.svg);
-}
-.img-pdf-to-ppt{
-        background-image: url(../img/Icons/pdf-to-ppt.svg);
-}
-.img-pdf-to-word{
-        background-image: url(../img/Icons/pdf-to-word.svg);
-}
-.img-ppt-to-pdf{
-        background-image: url(../img/Icons/ppt-to-pdf.svg);
-}
-.img-protect-pdf{
-        background-image: url(../img/Icons/protect-pdf.svg);
-}
-.img-rotate-pdf{
-        background-image: url(../img/Icons/rotate-pdf.svg);
-}
-.img-word-to-pdf{
-        background-image: url(../img/Icons/word-to-pdf.svg);
+.img-pdf-compress {
+    background-image: url('@Url.Content("~/img/Icons/pdf-compress.svg")');
+    /*background-image: url(../img/Icons/pdf-compress.svg);*/
 }
 
+.img-ebook-to-pdf {
+    background-image: url('@Url.Content("~/img/Icons/ebook-to-pdf.svg")');
+}
 
+.img-Excel-to-pdf {
+    background-image: url('@Url.Content("~/img/Icons/Excel-to-pdf.svg")');
+}
+
+.img-jpeg-to-pdf {
+    background-image: url('@Url.Content("~/img/Icons/jpeg-to-pdf.svg")');
+}
+
+.img-odt-to-pdf {
+    background-image: url('@Url.Content("~/img/Icons/odt-to-pdf.svg")');
+}
+
+.img-pages-to-pdf {
+    background-image: url('@Url.Content("~/img/Icons/pages-to-pdf.svg")');
+}
+
+.img-pdf-converter {
+    background-image: url('@Url.Content("~/img/Icons/pdf-converter.svg")');
+}
+
+.img-pdf-delete-pages {
+    background-image: url('@Url.Content("~/img/Icons/pdf-delete-pages.svg")');
+}
+
+.img-pdf-merge {
+    background-image: url('@Url.Content("~/img/Icons/pdf-merge.svg")');
+}
+
+.img-pdf-split {
+    background-image: url('@Url.Content("~/img/Icons/pdf-split.svg")');
+}
+
+.img-pdf-to-excel {
+    background-image: url('@Url.Content("~/img/Icons/pdf-to-excel.svg")');
+}
+
+.img-pdf-to-jpg {
+    background-image: url('@Url.Content("~/img/Icons/pdf-to-jpg.svg")');
+}
+
+.img-pdf-to-png {
+    background-image: url('@Url.Content("~/img/Icons/pdf-to-png.svg")');
+}
+
+.img-pdf-to-ppt {
+    background-image: url('@Url.Content("~/img/Icons/pdf-to-ppt.svg")');
+}
+
+.img-pdf-to-word {
+    background-image: url('@Url.Content("~/img/Icons/pdf-to-word.svg")');
+}
+
+.img-ppt-to-pdf {
+    background-image: url('@Url.Content("~/img/Icons/ppt-to-pdf.svg")');
+}
+
+.img-protect-pdf {
+    background-image: url('@Url.Content("~/img/Icons/protect-pdf.svg")');
+}
+
+.img-rotate-pdf {
+    background-image: url('@Url.Content("~/img/Icons/rotate-pdf.svg")');
+}
+
+.img-word-to-pdf {
+    background-image: url('@Url.Content("~/img/Icons/word-to-pdf.svg")');
+}
+
+.flexContainer {
+    /*visibility:hidden;*/
+    margin: 2px 10px;
+    display: flex;
+    width: 60%;
+    margin: auto;
+}
+
+.left {
+    flex-basis: 30%;
+    width: 25%;
+    background-color: lightgreen;
+    height: 350px;
+    margin: auto;
+}
+
+.right {
+    flex-basis: 30%;
+    width: 25%;
+    background-color: lightgreen;
+    height: 350px;
+    margin: auto;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#myBar {
+    width: 0%;
+    height: 20px;
+    background-color: #4CAF50;
+}
+
+#main-div{
+    opacity:10;
+}
+.my-modal {
+    display: flex;
+    justify-content: center;
+}
+
+.my-modal-dialog {
+    width:710px;
+}
+
+.my-modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.my-modal-btn-conatainer {
+    margin: 2px 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modal-btn {
+    padding: 14%;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+@media(max-width:765px) {
+    .my-modal {
+        align-items:center;
+    }
+
+    .my-modal-dialog {
+        width: 100%;
+    }
+
+    .my-modal-container {
+        display: block;
+    }
+    .my-modal-btn-conatainer {
+        justify-content:center;
+        width:90%;
+    }
+}

@@ -14,6 +14,7 @@
     <meta name="keywords" content="Your,Keywords">
     <meta name="author" content="ResponsiveWebInc">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="@Url.Content("~/css/bootstrap.min.css")" rel="stylesheet" />
     <link href="@Url.Content("~/css/style.css")" rel="stylesheet" />
     <link href="@Url.Content("~/css/font-awesome.min.css")" rel="stylesheet" />
@@ -23,7 +24,7 @@
 <body>
     @using (Html.BeginForm("ConvertFile", "ConvertPDF", FormMethod.Post, new { @enctype = "multipart/form-data" }))
     {
-        <div class="wrapper">
+        <div class="wrapper" id="main-div">
             <!-- header -->
             <header>
                 <!-- navigation -->
@@ -32,7 +33,7 @@
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
                             @*<a class="navbar-brand" href="#"><img class="img-responsive" src="img/logo_maindata.png" alt="Logo" /></a>*@
-                            <a class="navbar-brand" href="#"><img src="/img/logo_maindata.png">EOnlineTools</a>
+                            <a class="navbar-brand" href="#"><img src="@Url.Content("~/img/logo_maindata.png")">EOnlineTools</a>
                             <button class="collapsible navbar-toggle" type="button">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
@@ -70,6 +71,7 @@
                                         <a>Convert from PDF</a>
                                         <ul>
                                             <li class="img-pdf-to-word"><a href="/ConvertPDF/Index/PDFtoWord">PDF to Word</a></li>
+                                            <li class="img-pdf-to-excel"><a href="/ConvertPDF/Index/PDFtoExcel">PDF to Excel</a></li>
                                             <li class="img-pdf-to-excel"><a href="/ConvertPDF/Index/PDFtoExcel">PDF to Excel</a></li>
                                             <li class="img-pdf-to-ppt"><a href="/ConvertPDF/Index/PDFtoPPT">PDF to PPT</a></li>
                                             <li class="img-pdf-to-jpg"><a href="/ConvertPDF/Index/PDFtoJPG">PDF to JPG</a></li>
@@ -114,19 +116,29 @@
             <div class="container upload-container">
                 <div class="upload-btn-wrapper header-icon">
                     <div class="upload-icon">
-                        <img src="https://img.findmysoft.com/ico/133998.png" class="file-icon" alt="Alternate Text" />
+                        <img src="@Url.Content("~/img/133998.png")" class="file-icon" alt="Alternate Text" />
                         <div class="file-selector row">
-                            <img src="https://static.thenounproject.com/png/47347-200.png" alt="upload file" class="text-left" />
+                            <img src="@Url.Content("~/img/47347-200.png")" alt="upload file" class="text-left" />
                             <label class="text-center">Choose File </label>
                             <span class="caret text-right"></span>
                         </div>
                         @*<div class="DIV-UploadInline"></div>*@
+                        >
                     </div>
                     <input type="file" name="flpExcel" id="flpExcel" onchange="UploadFile()">
 
                 </div>
             </div>
             <input type="submit" id="btnUpload" value="Upload File" style="visibility:hidden" />
+            <div class="jumbotron white_bg">
+                <div id="myProgress">
+                    <div id="myBar" class="progress-bar progress-bar-striped active"></div>
+                </div>
+                <div class="flexContainer">
+                    <div class="left">Proj Name：</div>
+                    <div class="right">must have a name</div>
+                </div>
+            </div>
             <!-- banner end -->
             <!-- after banner -->
             <div class="after-banner">
@@ -338,6 +350,23 @@
                 </div>
             </div>
         </div>
+        <div class="modal my-modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle">
+            <div class="modal-dialog my-modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-body my-modal-container">
+                        <h4 class="text-center ">Select Converter</h4>
+                        <div class="my-modal-btn-conatainer">
+                            <div><button class="btn btn-primary modal-btn m-1 ">Pdf To Word</button></div>
+                            <div><button class="btn btn-success modal-btn m-1">Pdf To Word</button></div>
+                            <div><button class="btn btn-danger modal-btn m-1">Pdf To Word</button></div>
+                            <div><button class="btn btn-primary modal-btn m-1">Pdf To Word</button></div>
+                            <div><button class="btn btn-primary modal-btn m-1">Pdf To Word</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
     <script src="@Url.Content("~/js/jquery.js")"></script>
     <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
@@ -348,7 +377,27 @@
     <script>
         function UploadFile() {
             debugger;
+            var i = 0;
+            debugger;
+            if (i == 0) {
+                i = 1;
+                var elem = document.getElementById("myBar");
+                var width = 0;
+                var id = setInterval(frame, 10);
+                function frame() {
+                    if (width >= 100) {
+                        clearInterval(id);
+                        i = 0;
+                    } else {
+                        width++;
+                        elem.style.width = width + "%";
+                    }
+                }
+            }
+            document.getElementsByClassName('upload-container')[0].style.Display = 'None';
+            document.getElementsByClassName('flexContainer')[0].style.visibility = 'visible';
             document.getElementById('btnUpload').click();
+            $("#exampleModalLong").show();
             //btnUploadFile.addEventListener('click', true);
         }
         var coll = document.getElementsByClassName("collapsible");
