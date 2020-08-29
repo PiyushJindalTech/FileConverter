@@ -24,6 +24,11 @@
         .Upper_Part{
             display:none;
         }
+        #over img {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -107,13 +112,17 @@
                     </div><!-- /.container-fluid -->
                 </nav>
             </header>
-            <div class="jumbotron white_bg Upper_Part">
+            <div class="jumbotron white_bg">   @*Upper_Part*@
                 <div id="myProgress">
                     <div id="myBar" class="progress-bar progress-bar-striped active"></div>
                 </div>
                 <div class="flexContainer">
-                    <div class="left"></div>
+                    <div class="left">
+                        <img src="@Url.Content("~/img/plus-sign.png")" id="btnAddtoList1" style="height: 50px; position: fixed; width: 50px; margin: 23px;"><input type="button" name="btnAddtoList" id="btnAddtoList" class="AddNewDiv"></div> @*onclick="myFunction();"*@
                     <div class="right"></div>
+                </div>
+                <div class="AddNewflexContainer">
+
                 </div>
             </div>
             <!-- banner -->
@@ -434,6 +443,23 @@
                 showConfirmButton: false
             })
         }
+        function myFunction() {
+            var btn = document.createElement("DIV");
+            btn.innerHTML = "CLICK ME";
+            document.body.appendChild(btn);
+        }
+        $(function () {
+            $('#btnAddtoList').click(function () {
+                var newDiv = $('<div class="Newleft"></div>');
+                //newDiv.style.background = "#000";
+                $('.AddNewflexContainer').append(newDiv);
+            });
+            $('#btnAddtoList1').click(function () {
+                var newDiv = $('<div class="Newleft"></div>');
+                //newDiv.style.background = "#000";
+                $('.AddNewflexContainer').append(newDiv);
+            });
+        });
     </script>
 </body>
 </html>

@@ -155,6 +155,7 @@
     <Content Include="img\event\2.jpg" />
     <Content Include="img\event\3.jpg" />
     <Content Include="img\logo.png" />
+    <Content Include="img\plus-sign.png" />
     <Content Include="img\team\1.jpg" />
     <Content Include="img\team\2.jpg" />
     <Content Include="js\bootstrap.js" />
