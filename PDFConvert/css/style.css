@@ -798,6 +798,14 @@ ul {
     border: 1px solid blue;
     background-color: lightgreen;
 }
+.ImgAddSign{
+    height: 50px; 
+    position: fixed; 
+    width: 50px; 
+    margin: 23px; 
+    margin-top: 55px; 
+    margin-left: 28px;
+}
 #myProgress {
     width: 100%;
     background-color: #ddd;
