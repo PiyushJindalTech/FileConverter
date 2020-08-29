@@ -790,7 +790,7 @@ ul {
     opacity:10;
 }
 .my-modal {
-    display: flex;
+    display: none;
     justify-content: center;
 }
 

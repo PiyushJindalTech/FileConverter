@@ -20,6 +20,11 @@
     <link href="@Url.Content("~/css/font-awesome.min.css")" rel="stylesheet" />
     <link href="@Url.Content("~/css/sweetalert.min.css")" rel="stylesheet" />
     <link rel="shortcut icon" href="#">
+    <style type="text/css">
+        .Upper_Part{
+            display:none;
+        }
+    </style>
 </head>
 <body>
     @using (Html.BeginForm("ConvertFile", "ConvertPDF", FormMethod.Post, new { @enctype = "multipart/form-data" }))
@@ -102,7 +107,15 @@
                     </div><!-- /.container-fluid -->
                 </nav>
             </header>
-
+            <div class="jumbotron white_bg Upper_Part">
+                <div id="myProgress">
+                    <div id="myBar" class="progress-bar progress-bar-striped active"></div>
+                </div>
+                <div class="flexContainer">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                </div>
+            </div>
             <!-- banner -->
             <div class="Before-banner">
                 <div class="container">
@@ -123,22 +136,11 @@
                             <span class="caret text-right"></span>
                         </div>
                         @*<div class="DIV-UploadInline"></div>*@
-                        >
                     </div>
                     <input type="file" name="flpExcel" id="flpExcel" onchange="UploadFile()">
-
                 </div>
             </div>
             <input type="submit" id="btnUpload" value="Upload File" style="visibility:hidden" />
-            <div class="jumbotron white_bg">
-                <div id="myProgress">
-                    <div id="myBar" class="progress-bar progress-bar-striped active"></div>
-                </div>
-                <div class="flexContainer">
-                    <div class="left">Proj Name：</div>
-                    <div class="right">must have a name</div>
-                </div>
-            </div>
             <!-- banner end -->
             <!-- after banner -->
             <div class="after-banner">
@@ -394,9 +396,11 @@
                     }
                 }
             }
-            document.getElementsByClassName('upload-container')[0].style.Display = 'None';
-            document.getElementsByClassName('flexContainer')[0].style.visibility = 'visible';
+            document.getElementsByClassName('upload-container')[0].style.display = 'none';
+            document.getElementsByClassName('Before-banner')[0].style.display = 'none';
+            document.getElementsByClassName('Upper_Part')[0].style.display = 'block';
             document.getElementById('btnUpload').click();
+            document.getElementsByClassName('my-modal')[0].style.Display = 'None';
             $("#exampleModalLong").show();
             //btnUploadFile.addEventListener('click', true);
         }

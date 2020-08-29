@@ -76,7 +76,7 @@ namespace PDFConvert.Controllers
                     tStatus = "";
 
                 if (tStatus != "1")
-                    Helper.ErrorLog("ConvertFile(): " + tStatus);
+                    Helper.ErrorLog("Index(): " + tStatus);
                 else
                     DownloadFile(filePath, outputFileName, Helper.GetContentType(outputFileName.Split('.').Last()));
             }
