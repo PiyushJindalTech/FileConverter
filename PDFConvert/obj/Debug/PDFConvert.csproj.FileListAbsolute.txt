@@ -105,6 +105,6 @@ D:\ImagineUpline\FileConverter\FileConverter\PDFConvert\bin\System.Web.Razor.xml
 D:\ImagineUpline\FileConverter\FileConverter\PDFConvert\bin\System.Web.WebPages.xml
 D:\ImagineUpline\FileConverter\FileConverter\PDFConvert\bin\System.Web.WebPages.Deployment.xml
 D:\ImagineUpline\FileConverter\FileConverter\PDFConvert\bin\System.Web.WebPages.Razor.xml
+D:\ImagineUpline\FileConverter\FileConverter\PDFConvert\obj\Debug\PDFConvert.csprojResolveAssemblyReference.cache
 D:\ImagineUpline\FileConverter\FileConverter\PDFConvert\obj\Debug\PDFConvert.dll
 D:\ImagineUpline\FileConverter\FileConverter\PDFConvert\obj\Debug\PDFConvert.pdb
-D:\ImagineUpline\FileConverter\FileConverter\PDFConvert\obj\Debug\PDFConvert.csprojResolveAssemblyReference.cache
