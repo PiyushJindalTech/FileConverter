@@ -21,14 +21,16 @@
     <link href="@Url.Content("~/css/sweetalert.min.css")" rel="stylesheet" />
     <link rel="shortcut icon" href="#">
     <style type="text/css">
-        .Upper_Part{
-            display:none;
+        .Upper_Part {
+            display: none;
         }
+
         #over img {
             margin-left: auto;
             margin-right: auto;
             display: block;
         }
+
         .ulList {
             overflow-x: auto;
             white-space: initial;
@@ -38,7 +40,8 @@
         .liList {
             margin: 25px;
             display: inline-table;
-        }   
+            font-size: larger;
+        }
     </style>
 </head>
 <body>
@@ -123,31 +126,31 @@
                 </nav>
             </header>
             <div class="jumbotron white_bg Upper_Part">
-                    <div id="myProgress">
-                        <div id="myBar" class="progress-bar progress-bar-striped active"></div>
-                    </div>
-                    <div class="flexContainer">
-                        <div class="left">
-                            <span id="btnAddtoList1" class="ImgAddSign">
-                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                                </svg>
-                            </span>
-                            <input type="button" name="btnAddtoList" id="btnAddtoList" class="AddNewDiv">
-                        </div>
-                        <div class="ImageArrowDiv">
-                            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"></path>
-                                <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
-                            </svg>
-                        </div>
-                        <div class="right"></div>
-                    </div>
-                    <div class="AddNewflexContainer">
-
-                    </div>
+                <div id="myProgress">
+                    <div id="myBar" class="progress-bar progress-bar-striped active"></div>
                 </div>
+                <div class="flexContainer">
+                    <div class="left">
+                        <span id="btnAddtoList1" class="ImgAddSign">
+                            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                            </svg>
+                        </span>
+                        <input type="button" name="btnAddtoList" id="btnAddtoList" class="AddNewDiv">
+                    </div>
+                    <div class="ImageArrowDiv">
+                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"></path>
+                            <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+                        </svg>
+                    </div>
+                    <div class="right"></div>
+                </div>
+                <div class="AddNewflexContainer">
+
+                </div>
+            </div>
             <!-- banner -->
             <div class="Before-banner">
                 <div class="container">
@@ -274,54 +277,55 @@
                             <li class="liList">
                                 Convert & Compress
                                 <ul>
-                                    <li><a href="#">Compress PDF</a></li>
-                                    <li><a href="#">PDF Converter</a></li>
+                                    <li class="img-pdf-compress"><a href="/ConvertPDF/Index/CompressPDF">Compress PDF</a></li>
+                                    <li class="img-pdf-converter"><a href="/ConvertPDF/Index/PDFConverter">PDF Converter</a></li>
                                 </ul>
                             </li>
                             <li class="liList">
                                 Split & Merge
                                 <ul>
-                                    <li><a href="#">Split PDF</a></li>
-                                    <li><a href="#">Merge PDF</a></li>
+                                    <li class="img-pdf-split"><a href="/ConvertPDF/Index/SplitPDF">Split PDF</a></li>
+                                    <li class="img-pdf-merge"><a href="/ConvertPDF/Index/MergePDF">Merge PDF</a></li>
                                 </ul>
                             </li>
                             <li class="liList">
                                 View & Edit
                                 <ul>
-                                    <li><a href="#">Edit PDF</a></li>
-                                    <li><a href="#">PDF Reader</a></li>
-                                    <li><a href="#">Share Document</a></li>
-                                    <li><a href="#">Number Pages</a></li>
-                                    <li><a href="#">Delete PDF Pages</a></li>
-                                    <li><a href="#">Rotate PDF</a></li>
+                                    @*<li><a href="#">Edit PDF</a></li>
+                                        <li><a href="#">PDF Reader</a></li>
+                                        <li><a href="#">Share Document</a></li>
+                                        <li><a href="#">Number Pages</a></li>*@
+                                    <li class="img-pdf-delete-pages"><a href="/ConvertPDF/Index/DeletePDFPages">Delete PDF Pages</a></li>
+                                    <li class="img-rotate-pdf"><a href="/ConvertPDF/Index/RotatePDF">Rotate PDF</a></li>
                                 </ul>
                             </li>
                             <li class="liList">
                                 Convert from PDF
                                 <ul>
-                                    <li><a href="#">PDF to Word</a></li>
-                                    <li><a href="#">PDF to Excel</a></li>
-                                    <li><a href="#">PDF to PPT</a></li>
-                                    <li><a href="#">PDF to JPG</a></li>
+                                    <li class="img-pdf-to-word"><a href="/ConvertPDF/Index/PDFtoWord">PDF to Word</a></li>
+                                    <li class="img-pdf-to-excel"><a href="/ConvertPDF/Index/PDFtoExcel">PDF to Excel</a></li>
+                                    <li class="img-pdf-to-excel"><a href="/ConvertPDF/Index/PDFtoExcel">PDF to Excel</a></li>
+                                    <li class="img-pdf-to-ppt"><a href="/ConvertPDF/Index/PDFtoPPT">PDF to PPT</a></li>
+                                    <li class="img-pdf-to-jpg"><a href="/ConvertPDF/Index/PDFtoJPG">PDF to JPG</a></li>
                                 </ul>
                             </li>
                             <li class="liList">
                                 Convert to PDF
                                 <ul>
-                                    <li><a href="#">Word to PDF</a></li>
-                                    <li><a href="#">Excel to PDF</a></li>
-                                    <li><a href="#">PPT to PDF</a></li>
-                                    <li><a href="#">JPG to PDF</a></li>
+                                    <li class="img-word-to-pdf"><a href="/ConvertPDF/Index/WordtoPDF">Word to PDF</a></li>
+                                    <li class="img-Excel-to-pdf"><a href="/ConvertPDF/Index/ExceltoPDF">Excel to PDF</a></li>
+                                    <li class="img-ppt-to-pdf"><a href="/ConvertPDF/Index/PPTtoPDF">PPT to PDF</a></li>
+                                    <li class="img-jpeg-to-pdf"><a href="/ConvertPDF/Index/JPGtoPDF">JPG to PDF</a></li>
                                 </ul>
                             </li>
-                            <li class="liList">
+                            @*<li class="liList">
                                 Sign & Security
                                 <ul>
                                     <li><a href="#">eSign PDF</a></li>
                                     <li><a href="#">Unlock PDF</a></li>
                                     <li><a href="#">Protect PDF</a></li>
                                 </ul>
-                            </li>
+                            </li>*@
                         </ul>
                     </div>
                 </div>
